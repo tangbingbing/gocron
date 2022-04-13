@@ -169,7 +169,7 @@
       <el-table-column label="操作" width="220" v-if="this.isAdmin">
         <template slot-scope="scope">
           <el-row>
-            <el-button type="primary" @click="toEdit(scope.row)">编辑</el-button>
+            <el-button type="primary"  @click="toEdit(scope.row)">编辑</el-button>
             <el-button type="success" @click="runTask(scope.row)">手动执行</el-button>
           </el-row>
           <br>
@@ -313,7 +313,10 @@ export default {
       })
     },
     jumpToLog (item) {
-      this.$router.push(`/task/log?task_id=${item.id}`)
+      let path = ''
+      path = `/task/log?task_id=${item.id}`
+      window.open(path)
+      // this.$router.push(`/task/log?task_id=${item.id}`)
     },
     refresh () {
       this.search(() => {
@@ -327,7 +330,8 @@ export default {
       } else {
         path = `/task/edit/${item.id}`
       }
-      this.$router.push(path)
+      window.open(path)
+      // this.$router.push(path)
     }
   }
 }
