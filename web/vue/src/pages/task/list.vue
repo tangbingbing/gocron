@@ -314,7 +314,7 @@ export default {
     },
     jumpToLog (item) {
       let path = ''
-      path = `/task/log?task_id=${item.id}`
+      path = `/#/task/log?task_id=${item.id}`
       window.open(path)
       // this.$router.push(`/task/log?task_id=${item.id}`)
     },
@@ -330,7 +330,7 @@ export default {
       } else {
         path = `/task/edit/${item.id}`
       }
-      window.open(path)
+      window.open('/#'+path)
       // this.$router.push(path)
     }
   }
